@@ -65,8 +65,10 @@ function fadeIntroAudio(duration = 4000) {
 
 function finishIntro({ skipped = false } = {}) {
   clearTimeout(introTimer);
-  clearTimeout(introFadeTimer);
-  if (skipped) fadeIntroAudio(850);
+  if (skipped) {
+    clearTimeout(introFadeTimer);
+    fadeIntroAudio(850);
+  }
   intro.classList.add('is-finished');
   document.body.classList.remove('intro-open');
   setTimeout(() => { intro.hidden = true; }, 900);
@@ -77,7 +79,7 @@ function startIntro() {
   introAudio = new Audio(experience.introAudio);
   introAudio.volume = .9;
   introAudio.play().catch(() => {});
-  introFadeTimer = setTimeout(() => fadeIntroAudio(4000), 7800);
+  introFadeTimer = setTimeout(() => fadeIntroAudio(5000), 15000);
   introTimer = setTimeout(finishIntro, 11800);
 }
 enter.addEventListener('click', startIntro);
