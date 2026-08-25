@@ -30,14 +30,33 @@ const intro = document.querySelector('#intro');
 const enter = document.querySelector('#enter');
 const skip = document.querySelector('#skipIntro');
 let introTimer;
-function finishIntro() {
+let introFadeTimer;
+let introFadeFrame;
+
+function fadeIntroAudio(duration = 4000) {
+  if (!introAudio || introAudio.paused) return;
+  cancelAnimationFrame(introFadeFrame);
+  const initialVolume = introAudio.volume;
+  const startedAt = performance.now();
+
+  const fade = (now) => {
+    const progress = Math.min(1, (now - startedAt) / duration);
+    introAudio.volume = initialVolume * (1 - progress);
+    if (progress < 1) {
+      introFadeFrame = requestAnimationFrame(fade);
+      return;
+    }
+    introAudio.pause();
+    introAudio.currentTime = 0;
+  };
+
+  introFadeFrame = requestAnimationFrame(fade);
+}
+
+function finishIntro({ skipped = false } = {}) {
   clearTimeout(introTimer);
-  if (introAudio) {
-    const fade = setInterval(() => {
-      introAudio.volume = Math.max(0, introAudio.volume - .08);
-      if (introAudio.volume === 0) { clearInterval(fade); introAudio.pause(); }
-    }, 60);
-  }
+  clearTimeout(introFadeTimer);
+  if (skipped) fadeIntroAudio(850);
   intro.classList.add('is-finished');
   document.body.classList.remove('intro-open');
   setTimeout(() => { intro.hidden = true; }, 900);
@@ -48,10 +67,11 @@ function startIntro() {
   introAudio = new Audio(experience.introAudio);
   introAudio.volume = .9;
   introAudio.play().catch(() => {});
-  introTimer = setTimeout(finishIntro, 7600);
+  introFadeTimer = setTimeout(() => fadeIntroAudio(4000), 7800);
+  introTimer = setTimeout(finishIntro, 11800);
 }
 enter.addEventListener('click', startIntro);
-skip.addEventListener('click', finishIntro);
+skip.addEventListener('click', () => finishIntro({ skipped: true }));
 document.body.classList.add('intro-open');
 
 const canvas = document.querySelector('#energy');
