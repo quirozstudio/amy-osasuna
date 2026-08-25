@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,500;1,600&display=swap');
+.quiet{background:radial-gradient(circle at 76% 24%,#17100f 0,transparent 28%),#080808}
+.quiet-photo img{filter:saturate(.72) brightness(.52) sepia(.08)}
+.letter{position:relative}
+.letter:before{content:'';position:absolute;top:19vh;left:clamp(1.5rem,6vw,7rem);width:1px;height:42vh;background:linear-gradient(var(--red),transparent);opacity:.55}
+.letter-kicker{display:flex;align-items:center;gap:1rem;font-family:var(--body)}
+.letter-kicker i{display:block;width:34px;height:1px;background:var(--red)}
+.letter p{font-family:'Cormorant Garamond',Georgia,serif!important;font-size:clamp(2.15rem,3.9vw,4.25rem)!important;font-weight:400!important;line-height:1.12!important;letter-spacing:-.025em;color:#bdb7b0!important;text-wrap:balance}
+.letter p span{color:#f3eee7;font-style:italic}
+.letter .letter-pause{font-size:clamp(2.8rem,5vw,5.4rem)!important;color:#eee8e0!important}
+.letter .letter-pause strong{display:inline-block;color:var(--red);font-weight:500;font-style:italic;margin-top:.3em}
+.letter .closing small{font:500 .68rem/1 var(--body);text-transform:uppercase;letter-spacing:.22em;color:#8e8882}
+.letter .closing strong{display:inline-block;margin-top:.18em;font:600 italic clamp(5.8rem,10vw,10rem)/.72 'Cormorant Garamond',Georgia,serif;color:var(--red);letter-spacing:-.06em}
+.letter .reveal{transition-duration:1.45s}
+@media(max-width:700px){.letter:before{top:-4rem;height:28vh}.letter p{font-size:2.35rem!important;line-height:1.13!important}.letter .letter-pause{font-size:3.25rem!important}.letter .closing strong{font-size:6.5rem}.letter-kicker{margin-bottom:26vh}}

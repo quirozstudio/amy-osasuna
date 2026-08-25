@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#080808" />
+    <meta name="description" content="Un recuerdo para Amy. Un día inolvidable en El Sadar." />
+    <link rel="preload" as="image" href="/img/heroamy.webp" type="image/webp" fetchpriority="high" />
+    <title>Un recuerdo para Amy</title>
+  </head>
+  <body>
+    <a class="skip" href="#recuerdo">Saltar la introducción</a>
+    <div id="intro" class="intro" aria-label="Introducción de Un recuerdo para Amy">
+      <canvas id="energy" aria-hidden="true"></canvas>
+      <div class="intro-glow" aria-hidden="true"></div>
+      <div class="crest" aria-hidden="true">
+        <svg viewBox="0 0 180 240" role="img" aria-label="Escudo del Club Atlético Osasuna">
+          <path class="official-crown" d="M28 48 17 16l27 19L60 7l30 30 30-30 16 28 27-19-11 32c-34-14-90-14-124 0Zm4 11c34-13 82-13 116 0l-4 14c-31-12-77-12-108 0Z"/>
+          <path class="official-frame" d="M18 81 90 61l72 20c-6 73-35 121-72 153C53 202 24 154 18 81Z"/>
+          <path class="official-red" d="M24 85 90 67v162c-28-21-58-66-66-144Z"/>
+          <path class="official-blue" d="M156 85 90 67v162c28-21 58-66 66-144Z"/>
+          <g class="official-chain"><circle cx="90" cy="82" r="5"/><circle cx="43" cy="96" r="5"/><circle cx="137" cy="96" r="5"/><circle cx="43" cy="130" r="5"/><circle cx="137" cy="130" r="5"/><circle cx="57" cy="166" r="5"/><circle cx="123" cy="166" r="5"/><circle cx="90" cy="195" r="5"/><path d="M90 87v32M47 98l28 17m58-17-28 17M47 130l28-8m58 8-28-8m-44 40 20-27m38 27-20-27m-9 19v36"/></g>
+          <path class="official-lion" d="M75 105c7-12 22-14 33-7l-7 8c9 4 14 12 14 23-7-3-12-7-16-13v24H83v-23l-12 12-8-10 12-14Zm8-3-9-8 13-6 8 9Z"/>
+          <g class="official-letters"><text x="37" y="124">C</text><text x="84" y="214">O</text><text x="126" y="124">A</text></g>
+        </svg>
+      </div>
+      <div class="intro-copy">
+        <p class="club">OSASUNA</p>
+        <p class="gift">UN RECUERDO PARA <strong>AMY</strong></p>
+      </div>
+      <button class="sound-entry" id="enter" type="button">
+        <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span><b>Entrar en el recuerdo</b><small>con sonido de El Sadar</small></span>
+      </button>
+      <button class="skip-intro" id="skipIntro" type="button">Saltar intro</button>
+    </div>
+
+    <main id="recuerdo">
+      <section class="hero" aria-labelledby="hero-title">
+        <img src="/img/heroamy.webp" alt="Amy, de espaldas con su camiseta de Osasuna, contemplando El Sadar" fetchpriority="high" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy reveal">
+          <span>El Sadar · Pamplona</span>
+          <h1 id="hero-title">Ese día<br><em>fue tuyo.</em></h1>
+          <p>Una camiseta, un estadio<br>y un recuerdo para siempre.</p>
+        </div>
+        <div class="scroll-note">Desliza para volver <span>↓</span></div>
+      </section>
+
+      <section class="chapter opening" aria-labelledby="begin-title">
+        <div class="chapter-index">01 — EL DÍA</div>
+        <div class="opening-copy reveal">
+          <p class="eyebrow">Después de vivir El Sadar</p>
+          <h2 id="begin-title">El día continuó<br>todos juntos.</h2>
+        </div>
+        <figure class="editorial-photo photo-wide reveal">
+          <img src="/img/mcdonalds.webp" alt="Amy con su familia antes de ir a El Sadar" loading="lazy" />
+          <figcaption><span>Después de El Sadar</span><b>Nos fuimos a comer.</b></figcaption>
+        </figure>
+        <div class="photo-pair">
+          <figure class="editorial-photo reveal"><img src="/img/amy.webp" alt="Amy preparada para el partido con la camiseta de Osasuna" loading="lazy" /></figure>
+          <figure class="editorial-photo offset reveal"><img src="/img/mery.webp" alt="Amy y Mery después de la experiencia en El Sadar" loading="lazy" /></figure>
+        </div>
+        <figure class="editorial-photo after-sadar reveal"><img src="/img/papamy.webp" alt="Amy y su padre en El Sadar" loading="lazy" /><figcaption><span>Una última desde dentro</span><b>Papá y Amy.</b></figcaption></figure>
+      </section>
+
+      <section class="players" aria-labelledby="players-title">
+        <header class="players-head reveal">
+          <span>02 — LOS ENCUENTROS</span>
+          <h2 id="players-title">Los que hicieron<br><em>el día más grande.</em></h2>
+          <p>Una camiseta llena de firmas. Una foto para cada nombre.</p>
+        </header>
+        <div id="playerCards" class="player-cards"></div>
+      </section>
+
+      <section class="mystery" aria-labelledby="mystery-title">
+        <div class="mystery-stamp" aria-hidden="true">?</div>
+        <div class="mystery-copy reveal">
+          <span>CASO 08 · SIN RESOLVER</span>
+          <h2 id="mystery-title">Un momento…<br><em>¿y este quién es?</em></h2>
+          <p>Amy vio que todo el mundo se hacía una foto con él y pensó: <strong>«pues yo también».</strong></p>
+          <p class="mystery-question">A día de hoy, seguimos sin saber quién es.</p>
+          <div class="mystery-callout"><i aria-hidden="true">↗</i><span>¿Alguien<br>lo identifica?</span></div>
+        </div>
+        <figure class="mystery-photo reveal">
+          <img src="/img/quien.webp" alt="Amy fotografiada con un invitado cuya identidad todavía no conocemos" loading="lazy" />
+          <figcaption><span>IDENTIDAD</span><b>DESCONOCIDA</b><small>Por ahora…</small></figcaption>
+        </figure>
+      </section>
+
+      <section class="signature-moment" aria-labelledby="signature-title">
+        <div class="signature-copy reveal"><span>Un instante irrepetible</span><h2 id="signature-title">La firma<br>de <em>Moro.</em></h2><p>El recuerdo dejó de ser solo una imagen. Se quedó escrito en la camiseta.</p></div>
+        <figure class="signature-image reveal"><img src="/img/morofirmando.webp" alt="Raúl Moro firma la camiseta de Amy" loading="lazy"/><div>18</div></figure>
+      </section>
+
+      <section class="training" aria-labelledby="training-title">
+        <div class="training-inner reveal">
+          <span>03 — DESDE DENTRO</span><h2 id="training-title">Tan cerca<br>del terreno de juego.</h2>
+          <video controls playsinline preload="metadata" src="/video/WhatsApp Video 2026-08-25 at 11.36.50.mp4"></video>
+        </div>
+      </section>
+
+      <section class="quiet" aria-label="El recuerdo se vuelve íntimo">
+        <div class="quiet-photo"><img src="/img/papayamy.webp" alt="Amy y su padre compartiendo el día en El Sadar" loading="lazy" /></div>
+        <div class="letter">
+          <div class="letter-kicker reveal"><i></i><span>Para ti, Amy.</span></div>
+          <p class="reveal">Hay días que se recuerdan<br>por lo que ocurre,<br><span>y otros por quién los vives.</span></p>
+          <p class="letter-pause reveal">Este fue<br><strong>uno de esos días.</strong></p>
+          <p class="reveal">Ver tu ilusión,<br>compartir contigo cada momento,<br><span>me hizo guardarlo para siempre.</span></p>
+          <p class="reveal">Por eso hoy dejo este recuerdo aquí,<br>para que siempre que quieras<br><span>puedas volver a este día.</span></p>
+          <p class="closing reveal"><small>Con todo mi cariño,</small><br><strong>papá.</strong></p>
+        </div>
+      </section>
+    </main>
+    <footer><span>UN RECUERDO PARA AMY</span><span>EL SADAR · PARA SIEMPRE</span></footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
