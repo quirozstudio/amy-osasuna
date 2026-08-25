@@ -2,6 +2,7 @@ import './style.css';
 import './mystery.css';
 import './crest.css';
 import './final.css';
+import './player-profile.css';
 
 // El cántico de El Sadar pertenece exclusivamente a la intro. La interacción inicial
 // permite reproducirlo respetando las restricciones de autoplay de los navegadores.
@@ -12,9 +13,9 @@ const players = [
   { photo: new URL('../img/bretones.webp', import.meta.url).href, number: '23', name: 'Abel Bretones', role: 'Defensa', source: 'https://www.osasuna.es/plantilla' },
   { photo: new URL('../img/catena.webp', import.meta.url).href, number: '24', name: 'Alejandro Catena', role: 'Defensa', source: 'https://www.osasuna.es/plantilla' },
   { photo: new URL('../img/dubasin.webp', import.meta.url).href, number: '21', name: 'Jonathan Dubasin', role: 'Delantero', source: 'https://www.osasuna.es/plantilla' },
-  { photo: new URL('../img/raul.webp', import.meta.url).href, number: '09', name: 'Raúl García de Haro', role: 'Delantero', source: 'https://www.osasuna.es/raul-garcia-2026' },
-  { photo: new URL('../img/ruben.garci.webp', import.meta.url).href, number: '14', name: 'Rubén García', role: 'Centrocampista', source: 'https://www.osasuna.es/plantilla' },
-  { photo: new URL('../img/kike garcia.webp', import.meta.url).href, number: '11', name: 'Kike Barja', role: 'Delantero', source: 'https://www.osasuna.es/plantilla' },
+  { photo: new URL('../img/raul.webp', import.meta.url).href, number: '9', name: 'Raúl García de Haro', role: 'Delantero', source: 'https://www.osasuna.es/raul-garcia-2026' },
+  { photo: new URL('../img/ruben.garci.webp', import.meta.url).href, number: '14', name: 'Rubén García', role: 'Medio', source: 'https://www.osasuna.es/ruben-garcia-2026' },
+  { photo: new URL('../img/kike garcia.webp', import.meta.url).href, number: '11', name: 'Kike Barja', role: 'Delantero', source: 'https://www.osasuna.es/kike-barja-2026' },
   { photo: new URL('../img/moro.webp', import.meta.url).href, number: '18', name: 'Raúl Moro', role: 'Delantero', source: 'https://www.osasuna.es/osasuna-ficha-a-raul-moro' }
 ];
 
@@ -22,7 +23,16 @@ document.querySelector('#playerCards').innerHTML = players.map((p, i) => `
   <article class="player-card reveal" style="--i:${i}">
     <div class="card-number" aria-hidden="true">${p.number}</div>
     <div class="card-photo"><img src="${p.photo}" alt="Amy con ${p.name}" loading="lazy"></div>
-    <div class="card-info"><span>CA OSASUNA · ${p.role}</span><h3>${p.name}</h3><a href="${p.source}" target="_blank" rel="noreferrer">Ficha oficial ↗</a></div>
+    <div class="card-info">
+      <span>El encuentro</span>
+      <h3>${p.name}</h3>
+      <dl class="player-profile" aria-label="Ficha de ${p.name}">
+        <div><dt>Dorsal</dt><dd>${p.number}</dd></div>
+        <div><dt>Posición</dt><dd>${p.role}</dd></div>
+        <div><dt>Club</dt><dd>CA Osasuna</dd></div>
+      </dl>
+      <a href="${p.source}" target="_blank" rel="noreferrer">Ver ficha oficial ↗</a>
+    </div>
     <div class="card-edge">AMY / EL SADAR / 2026</div>
   </article>`).join('');
 

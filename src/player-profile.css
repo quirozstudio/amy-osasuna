@@ -1,0 +1,54 @@
+.player-profile {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 520px);
+  margin: 0 0 2rem;
+  border-block: 1px solid #303034;
+}
+
+.player-profile div {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.player-profile div + div {
+  padding-left: 1rem;
+  border-left: 1px solid #303034;
+}
+
+.player-profile dt {
+  margin-bottom: .45rem;
+  color: #777;
+  font-size: .58rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.player-profile dd {
+  margin: 0;
+  color: #f3f0e9;
+  font: 700 clamp(.9rem, 1.3vw, 1.15rem) var(--display);
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .player-profile {
+    margin-bottom: 1.7rem;
+  }
+
+  .player-profile div {
+    padding: .85rem .6rem .85rem 0;
+  }
+
+  .player-profile div + div {
+    padding-left: .6rem;
+  }
+
+  .player-profile dt {
+    font-size: .5rem;
+  }
+
+  .player-profile dd {
+    font-size: .82rem;
+  }
+}
