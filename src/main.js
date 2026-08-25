@@ -19,7 +19,7 @@ const players = [
   { photo: new URL('../img/moro.webp', import.meta.url).href, number: '18', name: 'Raúl Moro', role: 'Delantero', source: 'https://www.osasuna.es/osasuna-ficha-a-raul-moro' }
 ];
 
-document.querySelector('#playerCards').innerHTML = players.map((p, i) => `
+const playerCards = players.map((p, i) => `
   <article class="player-card reveal" style="--i:${i}">
     <div class="card-number" aria-hidden="true">${p.number}</div>
     <div class="card-photo"><img src="${p.photo}" alt="Amy con ${p.name}" loading="lazy"></div>
@@ -35,6 +35,24 @@ document.querySelector('#playerCards').innerHTML = players.map((p, i) => `
     </div>
     <div class="card-edge">AMY / EL SADAR / 2026</div>
   </article>`).join('');
+
+const budimirComingSoon = `
+  <article class="player-card player-card--coming reveal" aria-labelledby="budimir-title">
+    <div class="card-number" aria-hidden="true">17</div>
+    <div class="coming-photo" aria-hidden="true">
+      <span>?</span>
+      <small>Foto pendiente</small>
+    </div>
+    <div class="card-info">
+      <span>La foto que nos faltó</span>
+      <h3 id="budimir-title">Ante<br>Budimir</h3>
+      <p class="coming-copy">Esta vez no pudo ser.<br>La dejamos pendiente para la próxima.</p>
+      <div class="coming-label"><i aria-hidden="true"></i> Próximamente…</div>
+    </div>
+    <div class="card-edge">PRÓXIMO OBJETIVO / DORSAL 17</div>
+  </article>`;
+
+document.querySelector('#playerCards').innerHTML = playerCards + budimirComingSoon;
 
 const intro = document.querySelector('#intro');
 const enter = document.querySelector('#enter');
