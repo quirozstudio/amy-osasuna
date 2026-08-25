@@ -1,17 +1,9 @@
-.crest{width:min(38vw,210px)!important;isolation:isolate}
+.crest{width:min(42vw,230px)!important;isolation:isolate}
 .crest:before,.crest:after{content:'';position:absolute;inset:15%;border-radius:50%;background:#d70f27;filter:blur(50px);opacity:0;z-index:-1}
 .crest:after{inset:-40%;border:1px solid rgba(215,15,39,.5);background:none;filter:none;transform:scale(.3)}
-.crest svg{width:100%;overflow:visible;filter:drop-shadow(0 16px 28px rgba(0,0,0,.8))}
-.crest .official-crown,.crest .official-frame{fill:#caa946;stroke:#ffe995;stroke-width:1.2;stroke-dasharray:900;stroke-dashoffset:900}
-.crest .official-red{fill:#d70f27;stroke:#d70f27}.crest .official-blue{fill:#00004c;stroke:#00004c}
-.crest .official-red,.crest .official-blue{opacity:0;transform-origin:center}
-.crest .official-chain{fill:#fff;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;opacity:0}
-.crest .official-chain circle{stroke:none}.crest .official-lion{fill:#caa946;stroke:#ffe995;stroke-width:1;opacity:0}
-.crest .official-letters{fill:#fff;stroke:none;opacity:0}.crest .official-letters text{font:700 24px Arial,sans-serif}
-.intro.is-playing .crest .official-crown,.intro.is-playing .crest .official-frame{animation:officialTrace 1.8s .25s cubic-bezier(.3,.8,.2,1) forwards}
-.intro.is-playing .crest .official-red,.intro.is-playing .crest .official-blue{animation:fieldBuild .75s 1.35s both}
-.intro.is-playing .crest .official-chain{animation:detailFlash .7s 1.9s both}.intro.is-playing .crest .official-lion{animation:detailFlash .6s 2.15s both}.intro.is-playing .crest .official-letters{animation:detailFlash .5s 2.35s both}
+.crest img{width:100%;height:auto;opacity:0;clip-path:inset(0 50% 0 50%);filter:brightness(3) saturate(.35) drop-shadow(0 16px 28px rgba(0,0,0,.8));transform:scale(.88)}
+.intro.is-playing .crest img{animation:officialReveal 2.15s .3s cubic-bezier(.2,.85,.2,1) forwards}
 .intro.is-playing .crest:before{animation:crestCore 3.8s .4s both}.intro.is-playing .crest:after{animation:shockwave 1s 2.65s both}
-@keyframes officialTrace{to{stroke-dashoffset:0}}@keyframes fieldBuild{from{opacity:0;transform:scale(.82);filter:brightness(4)}to{opacity:1;transform:scale(1);filter:none}}@keyframes detailFlash{from{opacity:0;filter:brightness(5);transform:scale(1.18)}to{opacity:1;filter:none;transform:scale(1)}}@keyframes crestCore{0%{opacity:0;transform:scale(.4)}55%{opacity:.22}72%{opacity:.8;transform:scale(1.25)}100%{opacity:.28;transform:scale(1)}}@keyframes shockwave{0%{opacity:0;transform:scale(.35)}25%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
+@keyframes officialReveal{0%{opacity:0;clip-path:inset(0 50% 0 50%);filter:brightness(4) saturate(.2) drop-shadow(0 0 0 transparent);transform:scale(.78)}65%{opacity:1;clip-path:inset(0);filter:brightness(1.8) saturate(1.15) drop-shadow(0 0 42px rgba(215,15,39,.9));transform:scale(1.06)}100%{opacity:1;clip-path:inset(0);filter:brightness(1) saturate(1.05) drop-shadow(0 16px 28px rgba(0,0,0,.8));transform:scale(1)}}@keyframes crestCore{0%{opacity:0;transform:scale(.4)}55%{opacity:.22}72%{opacity:.8;transform:scale(1.25)}100%{opacity:.28;transform:scale(1)}}@keyframes shockwave{0%{opacity:0;transform:scale(.35)}25%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
 .after-sadar{height:min(72vw,900px);margin-top:10vw}.after-sadar figcaption{position:absolute;left:2rem;bottom:2rem;color:#fff;display:grid;text-shadow:0 2px 8px #000}.after-sadar figcaption span{font-size:.65rem;text-transform:uppercase;letter-spacing:.2em}.after-sadar figcaption b{font:700 clamp(2rem,4vw,4rem) var(--display);text-transform:uppercase}
-@media(max-width:700px){.crest{width:min(48vw,185px)!important}.photo-wide{height:auto!important;aspect-ratio:16/9}.photo-wide img{object-fit:cover}.after-sadar{height:75vh;margin-top:5rem}.after-sadar figcaption{left:1rem;bottom:1rem}}
+@media(max-width:700px){.crest{width:min(54vw,205px)!important}.photo-wide{height:auto!important;aspect-ratio:16/9}.photo-wide img{object-fit:cover}.after-sadar{height:75vh;margin-top:5rem}.after-sadar figcaption{left:1rem;bottom:1rem}}
